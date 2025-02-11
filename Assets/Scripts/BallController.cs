@@ -3,6 +3,7 @@ using UnityEngine;
 public class BallController : MonoBehaviour
 {
     [SerializeField] private float force = 1f;
+    [SerializeField] private Transform ballAnchor;
     [SerializeField] private InputManager inputManager;
 
     private Rigidbody ballRB;
@@ -16,6 +17,9 @@ public class BallController : MonoBehaviour
 
         // Listener
         inputManager.OnSpacePressed.AddListener(LaunchBall);
+        transform.parent = ballAnchor;
+        transform.localPosition = Vector3.zero;
+        ballRB.isKinematic = true;
 
     }
 
@@ -29,6 +33,8 @@ public class BallController : MonoBehaviour
     {
         if (isBallLaunched) return;
         isBallLaunched = true;
+        ballRB.isKinematic = false;
+        transform.parent = null;
         ballRB.AddForce(transform.forward * force, ForceMode.Impulse);
     }
 }
