@@ -1,19 +1,26 @@
 using UnityEngine;
 using TMPro;
+using System.Net.NetworkInformation;
 
 public class GameManager : MonoBehaviour
 {
     [SerializeField] private float score = 0;
     [SerializeField] private TextMeshProUGUI scoreText;
-    private FallTrigger[] pins;
+
+    //A reference to our ballController
+    [SerializeField] private BallController ball;
+
+    ////A reference for our input manager
+    [SerializeField] private InputManager inputManager;
+
+    private FallTrigger[] fallTriggers;
     private void Start()
     {
-        //We find all objects of type FallTrigger
-        pins = Resources.FindObjectsOfTypeAll<FallTrigger>();
+        inputManager.OnResetPressed.AddListener(HandleReset);
 
-        //We then loop over our array of pins and add the
-        // IncrementScore function as their listener
-        foreach (FallTrigger pin in pins)
+        fallTriggers = FindObjectsOfType<FallTrigger>();
+        // Add event listeners to the pins
+        foreach (FallTrigger pin in fallTriggers)
         {
             pin.OnPinFall.AddListener(IncrementScore);
         }
@@ -23,5 +30,13 @@ public class GameManager : MonoBehaviour
     {
         score++;
         scoreText.text = $"Score: {score}";
+    }
+
+private void HandleReset()
+    {
+        Debug.Log("HandleReset() called!");
+
+        ball.ResetBall();
+
     }
 }

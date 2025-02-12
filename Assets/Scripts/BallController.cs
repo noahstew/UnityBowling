@@ -22,13 +22,9 @@ public class BallController : MonoBehaviour
         transform.localPosition = Vector3.zero;
         ballRB.isKinematic = true;
 
+        ResetBall();
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 
     private void LaunchBall()
     {
@@ -39,4 +35,15 @@ public class BallController : MonoBehaviour
         ballRB.AddForce(launchIndicator.forward * force, ForceMode.Impulse);
         launchIndicator.gameObject.SetActive(false);
     }
+
+    public void ResetBall()
+    {
+        isBallLaunched = false;
+        ballRB.isKinematic = true;
+        ballRB.linearVelocity = Vector3.zero;      
+        transform.parent = ballAnchor;
+        transform.localPosition = Vector3.zero;
+        transform.localRotation = Quaternion.identity; 
+    }
 }
+

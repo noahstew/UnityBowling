@@ -612,6 +612,37 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!1 &449164265
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 449164266}
+  m_Layer: 0
+  m_Name: PinAnchor
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &449164266
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 449164265}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0.182, y: -0.83, z: 4.12}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &608319459
 GameObject:
   m_ObjectHideFlags: 0
@@ -1326,6 +1357,11 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1386767859 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6927135821733711645, guid: fccd90f680b544b1e876c04890df8a0e, type: 3}
+  m_PrefabInstance: {fileID: 2181934830920029619}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1508335413
 GameObject:
   m_ObjectHideFlags: 0
@@ -1415,6 +1451,9 @@ MonoBehaviour:
   OnSpacePressed:
     m_PersistentCalls:
       m_Calls: []
+  OnResetPressed:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!4 &1673995134
 Transform:
   m_ObjectHideFlags: 0
@@ -1444,6 +1483,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   score: 0
   scoreText: {fileID: 2024399382}
+  ball: {fileID: 2143358116}
+  pinCollection: {fileID: 1386767859}
+  pinAnchor: {fileID: 449164266}
+  inputManager: {fileID: 1673995133}
 --- !u!1 &1677452314
 GameObject:
   m_ObjectHideFlags: 0
@@ -2008,3 +2051,4 @@ SceneRoots:
   - {fileID: 1508335415}
   - {fileID: 410152237}
   - {fileID: 761551382}
+  - {fileID: 449164266}
