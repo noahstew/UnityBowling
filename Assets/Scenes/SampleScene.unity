@@ -523,8 +523,8 @@ GameObject:
   - component: {fileID: 608319461}
   - component: {fileID: 608319460}
   m_Layer: 0
-  m_Name: Plane
-  m_TagString: Untagged
+  m_Name: Ground
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1208,6 +1208,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1673995134}
   - component: {fileID: 1673995133}
+  - component: {fileID: 1673995135}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -1248,6 +1249,19 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1673995135
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1673995132}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6f5c4762fa5284873ad83a3439581cdc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  score: 0
 --- !u!1 &1677452314
 GameObject:
   m_ObjectHideFlags: 0
@@ -1405,7 +1419,7 @@ GameObject:
   - component: {fileID: 2143358116}
   m_Layer: 7
   m_Name: Ball
-  m_TagString: Untagged
+  m_TagString: Ball
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1539,7 +1553,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3d62bdf3eaaa44a488c7ffc1e9b36a2c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  force: 15
+  force: 20
   ballAnchor: {fileID: 1677452315}
   inputManager: {fileID: 1673995133}
   launchIndicator: {fileID: 913144872}
