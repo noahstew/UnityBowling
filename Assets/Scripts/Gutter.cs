@@ -8,18 +8,10 @@ public class Gutter : MonoBehaviour
         {
             Debug.Log("Trigger activated by: " + triggeredBody.name);
 
-            // Get the Rigidbody of the object that entered the trigger
             Rigidbody ballRigidBody = triggeredBody.GetComponent<Rigidbody>();
 
-            // If the object does not have a Rigidbody, return early
-            if (ballRigidBody == null)
-            {
-                Debug.Log("No Rigidbody detected on " + triggeredBody.name);
-                return;
-            }
-
             // Store the velocity magnitude before resetting it
-            float velocityMagnitude = ballRigidBody.linearVelocity.magnitude;
+            float velocityMagnitude = 13f;
             Debug.Log("Ball velocity before reset: " + velocityMagnitude);
 
             // Reset the velocity (both linear and angular)
